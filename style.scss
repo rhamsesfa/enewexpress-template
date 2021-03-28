@@ -1,0 +1,1197 @@
+/* $primary : #e67e22;
+$utilities: (
+  "opacity": (
+    property: opacity,
+    class:o,
+    responsive:true,
+    values: (
+      0: 0,
+      25: .25,
+      50: .5,
+      75: .75,
+      100: 1,
+    )
+  )
+ ); */
+ $couleurh1 : #035b8e;
+ $couleurbtn : #e60470 !important;
+ $myshadow : 1px 1px 1px #0000004f;
+ $myshadow2 : 0px 11px 15px #000000d9;
+ $myshadow3 : 0px 3px 8px #cececed9;
+ $myshadow4 : 0px 3px 8px #cecece57;
+ $radius1 : 37px !important;
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+
+
+h1{
+  color: $couleurh1;
+  text-align: center;
+  margin-top: 30px !important;
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+h2, h3{
+  color: $couleurh1;
+}
+.rotate-90{
+  transform: rotate(90deg);
+}
+svg{
+  width:40px;
+  height:40px;
+}
+
+.chevron-down{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  svg{
+    width: 29px;
+    height: 22px
+  }
+}
+.panier{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: $myshadow3;
+  background-color: #ff017b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#testtt{
+  z-index: 100000000;
+  position: absolute;
+  bottom: 10px;
+  cursor: pointer;
+}
+.color-w{
+  color: #fff;
+}
+//interface d'inscription
+#interface_auth, #interface_paymentOnline{
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10000000;
+  #interface_insc, #interface_cnx, #interface_airtel{
+    background-color: $couleurh1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    .insc-head{
+      height: 88px;
+      background-color: #fff;
+      color: #035b8e;
+      width: 100%;
+      border-radius: 7px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: unset;
+      border-bottom-right-radius: unset;
+      display: flex;
+      align-items: center;
+      h1{
+        width: 100%;
+        padding-top: 0 !important;
+        margin: 0 !important;
+      }
+    }
+    form{
+      display: flex;
+      height: 495px;
+      /* flex-direction: column; */
+      padding: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      .form-control::placeholder {
+        color: #6c757d;
+        opacity: 0.5;
+
+      }
+      .radio-insc{
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #fff;
+        justify-content: space-around;
+        div{
+          padding-left: 5px;
+        }
+        #cgu_check{
+          height: 24px;
+        }
+      }
+    }
+    input{
+      font-size: 23px;
+
+    }
+    select{
+      font-size: 15px;
+      color: $couleurh1;
+      font-weight: bold;
+
+    }
+    input, select{
+      /* margin: 0 0 10px 0; */
+      height: 50px;
+    }
+    select, #firstname, #lastname{
+      width: 49%;
+    }
+    .insc-div-submit{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button{
+      background-color: #0291f9;
+      color: #fff;
+      width: 158px;
+      height: 51px;
+      font-size: 25px;
+      border-radius: 29px;
+      box-shadow: 1px 1px 33px #0000004f;
+    }
+    .container-detail-voyage_submit_next{
+      background-color: #0291f9;
+      color: #fff;
+      width: 302px;
+      height: 51px;
+      font-size: 25px;
+      border-radius: 29px;
+      box-shadow: 1px 1px 33px #0000004f;
+    }
+    .check_interface{
+      text-align: center;
+      color: #fff;
+      padding: 15px;
+      #check_interface_cnx, #check_interface_insc{
+        span{
+          text-decoration: underline;
+          transition: 1s;
+          cursor: pointer;
+        }
+        span:hover{
+          font-size: 18px;
+          transition: 1s;
+        }
+      }
+    }
+  }
+  #interface_cnx{
+    display: none;
+    form{
+      height: 224px;
+    }
+  }
+  #interface_airtel{
+    background-color: #fff;
+    form{
+      height: auto;
+      input{
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+    }
+    .insc-head{
+      h1{color: #fff;}
+      background-color: #fe3d45;
+    }
+    .insc-div-submit input{
+      width: 302px;
+      height: 51px;
+      background-color: #fe3d45;
+    }
+  }
+}
+.interface_auth{
+  display: flex !important;
+}
+//Fin interface d'inscription
+#container-accueil{
+  height: 100vh;
+  .enew-logo{
+      height: 100vh;
+      .enew-logo-div{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+      }
+  }
+  .main{
+    display: none;
+    img{
+      width: 365px !important;
+      height: 288px !important;
+    }
+  }
+}
+#container-navig{
+  .home{
+    height: auto;
+    display: none;
+    background: rgb(220,0,105);
+    background: linear-gradient(180deg, rgba(220,0,105,1) 0%, rgba(162,7,81,1) 69%, rgba(9,9,121,1) 100%); 
+  }
+  
+  h1{
+    color: #fff !important;
+    margin-top: 0 !important;
+    font-size: 38px !important;
+    font-weight: bold !important;
+    padding: 29px 0 29px 0;
+  }
+  .home-separator{
+    width: 100%;
+    /* height: 2px; */
+    border-bottom: 1px solid #fff;
+    /* margin-top: 40px;
+    margin-bottom: 20px; */
+  }
+  h2{
+    color: #fff !important;
+    margin-top: 0.5rem;
+  }
+  .home-option{
+    background-color: #fff !important;
+    min-height: 70%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px -9px 24px #24242442;
+    .home-option-div{
+      width: 286px;
+      height: 338px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: start;
+      justify-content: space-between;
+      button{
+        color: #fff;
+        box-shadow: $myshadow;
+      }
+      .home-option-div-btn{
+        width: 134px;
+        height: 135px;
+        border-radius: 25px;
+        display: flex;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .home-option-div-pub{
+        width: 286px;
+        height: 47px;
+        align-self: end;
+        border-radius: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #btn1{
+        background-color: #ff017b;
+        font-size: 23px;
+        div svg{
+          width: 32px;
+          height: 32px;
+        }
+      }
+      #btn2{
+        background-color: #0291f9;
+        font-size: 17px;
+        svg{
+          width: 44px;
+          height: 44px;
+        }      
+      }
+      #btn3{
+        background-color: #ffdd00;  
+        font-size: 17px;  
+        svg{
+          width: 74px;
+          height: 74px;
+        }         
+      }
+      #btn4{
+        background-color: #811d91; 
+        font-size: 17px; 
+        svg{
+          width: 80px;
+          height: 80px;
+        }           
+      }
+      #btn5{
+        background-color: #25a0e4; 
+        font-size: 25px; 
+        svg{
+          width: 50px;
+          height: 50px;
+        }          
+      }
+    }
+  }
+
+}
+.container-voyage{
+  display: flex !important;
+  flex-direction: column;
+  /* justify-content: center; */
+
+}
+#container-voyage{
+  display: none;
+  /*padding: 0;*/
+  #container-voyage-head{
+    height: 139px;
+    background-color: #fff;
+    margin-bottom: 5px !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow:  $myshadow3;
+    #voyage1{
+      display: flex;
+      align-items: center;
+
+      span{
+        text-align: center;
+      }
+      .voyage_brand{
+        width: 50%;
+        font-size: 29px;
+        font-weight: bold;
+        color: #035b8e;
+      }
+      .div-panier{
+        width: 25%;
+        display: flex;
+        justify-content: center;
+      }
+      .div-panier span{
+        display: block;
+        position: absolute;
+        background-color: #25a0e4;
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        top: 44px;
+        margin-right: 36px;
+      }
+      .panier svg{
+        width: 25px;
+        height: 25px;
+
+      }
+    }
+    #voyage2{
+      align-self: flex-end;
+      height: 57px;
+      display: flex;
+      align-items : center;
+      justify-content: center;
+      input{
+        font-size: 18px;
+        width: 298px;
+        height: 42px;
+        border-color: #aeaeae;
+        /* border: 2px solid #b8b8b880; */
+        border-radius: 10px;
+        padding: 0 15px 0 15px;
+      }
+      input::placeholder{
+        color: #b8b8b8 !important;
+
+      }
+      //après avoir procédé au choix des detail du voyage
+      .detail_head{
+        text-align: center;
+        color: #fff;
+        svg{
+          width: 15px;
+          height: 20px;
+        }
+      }
+      .svg-train{
+        position: absolute;
+        right: 2%;
+        color: #fff;
+      }
+    }
+  }
+  #container-voyage-body{
+    height: 392px;
+    background-color: #fff;
+    border-radius: 10px;
+    border-radius: 10px;
+    box-shadow:  $myshadow3;
+    max-width: 375px;
+    align-self: center;
+    transition: 1s;
+    /* padding: 5px;
+    margin: 0 auto; */
+    #body1{
+      background-color: #fff;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      border-radius: 10px;
+      #body1-div{
+        background-color: #f5f5f5;
+        width: 94px;
+        height: 35px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+          font-size: 17px;
+          color: #b8b8b8;
+        }
+        svg{
+          width: 37px;
+          height: 37px;
+          color: #b8b8b8;
+        }
+      }
+    }
+    #body2{
+      background-color: #fff;
+      height: 239px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      .body2-div{
+        background-color: #df006a;
+        color: #fff;
+        border-radius: 10px;
+        padding: 0 3px 0 8px;
+        box-shadow: $myshadow3;
+        overflow: hidden;
+        input{
+          border:none;
+          background: transparent;
+          color: #fff;
+          outline: unset;
+          font-size: 15px;
+          font-weight: bold;
+          &::placeholder{
+            color: #fff !important;
+            opacity: 1;
+          }
+        }
+      }
+      #body2-div1, #body2-div2, #body2-div6{
+        padding: 5px !important;
+      }
+      #body2-div4{
+        input{
+          &::keyboard-focusable{
+            display: none;
+          }
+        }
+      }
+      #body2-div1, #body2-div2, #body2-div3, #body2-div4{
+        width: 168px;
+        height: 50px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center !important;
+        flex-direction: column;
+      }
+      #body2-div1, #body2-div2, #body2-div6, #body2-div7{
+        font-size: 22px;
+        padding: 0;
+        text-align: center !important;
+      }
+      #body2-div5{
+        width: 225px;
+        height: 50px;
+        display: flex;
+        .body2-div5{
+          width: 50%;
+        }
+        #body2-div5-enfant{
+          height: 100%;
+          border-left: 1px solid #fff;
+          padding-left: 10px;
+        }
+      }
+      #body2-div6{
+        width: 114px;
+        height: 50px;           
+      }
+      #body2-div7{
+        width: 225px;
+        height: 50px;            
+      }
+      #body2-div8{
+        width: 114px;
+        height: 50px;  
+        background-color: #fff !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        span{              
+          font-size: 11px;
+        }
+        :first-child{
+          color: #035b8e;
+        }
+        :last-child{
+          color: #cfcfcf;
+          width: 60px;
+          height: 20px;
+        }        
+      }
+    }
+    #body3{
+      background-color: #fff;
+      height: 71px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button{
+        border-radius: $radius1;
+        width: 350px;
+        height: 51px;
+        background-color: #0291f9;
+        color: #fff;
+        font-size: 22px;
+        box-shadow: $myshadow3;
+      }
+    }
+
+  }
+  #container-voyage-lieu{
+    padding: 62px 5px 100px 5px;
+    transition: 1s;
+    h1{
+      font-size: 22px;
+    }
+    #container-voyage-lieu1{
+      background: #fff url(./img/plage.jpg) no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      min-height: 150px;
+      border-radius: 7px;
+      box-shadow: $myshadow3;
+      #lieu_discovery{
+        /* min-width: 360px;
+        min-height: 130px; */
+        display: flex;
+        width: 100%;
+        height: 100%;
+        span{
+          width: 222px;
+          height: 80px;
+          font-size: 22px;
+          color: #fff;
+          align-self: end;
+        }
+      }
+    }
+    #container-voyage-lieu2{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .lieu-tof{
+        width: 48%;
+        border-radius: 7px;
+      }
+      .lieu-tof img{
+        box-shadow: $myshadow4;
+        border-radius: 7px;
+      }
+      .lieu-tof span{
+        display: block;
+        padding-top: 5px;
+        font-size: 16px;
+        color: $couleurh1;
+      }
+    }
+    .div_shadow{
+      padding: 0;
+      height: 29px;
+      box-shadow: 0px 7px 6px #44444417;
+      margin: 0;
+      border-radius: 15px;
+    }
+    #container-voyage-lieu3{
+      padding-top: 16px;
+      padding-bottom: 39px;
+      margin-top: 19px;
+      border-radius: 7px;
+      box-shadow: $myshadow3;
+      h2{
+        padding-bottom: 17px;
+      }
+      img{
+        border-radius: 7px;
+        box-shadow: $myshadow4;
+      }
+    }
+  }
+  #container-detail-voyage, #container-valide-commande, #container-pay-commande{
+    display: none;
+    background-color: #f5f5f5;
+    height: 100vh;
+    h2{
+      padding-top: 10px;
+      svg{
+        color: #cfcfcf;
+        height: 116px;
+        width: 116px;
+      }
+    }
+    .tiket-validate_date{
+      color: $couleurbtn;
+    }
+    h2 span{
+      &:first-child{
+        font-size: 20px;
+      }
+      &:last-child{
+        font-size: 18px;
+      }
+    }
+    .tiket-validate{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      height: auto;
+      padding: 5px;
+      background-color: #fff;
+      border-radius: 7px;
+      box-shadow: $myshadow3;
+      margin-top: 10px;
+    }
+    .tiket-validate-total{
+      height: auto;
+      padding: 10px;
+      div{
+        width: 100%;
+      }
+    }
+    .tiket-validate-total-head{
+      span{
+        font-size: 20px;
+        color: $couleurh1;
+      }
+    }
+    .tiket-validate-total-body{
+      font-size: 20px;
+      color: $couleurh1;
+    }
+    .tiket-validate-total-montant{
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      color: $couleurbtn;
+      span{
+        font-size: 23px;
+      }
+
+      
+    }
+    .tiket-validate_div{
+      width: 100%;
+    }
+    .tiket-validate-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span{
+        color: $couleurbtn;
+        font-size: 16px;
+      }
+      .svg-train{
+        color: #cfcfcf;
+      }
+    }
+    .tiket-validate-body{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      div{
+        text-align: center;
+      }
+    }
+    .tiket-validate-body_1{
+      color: $couleurh1;
+    }
+    .tiket_validate-body_1_span1{
+      font-size: 18px;
+    }
+    .tiket_validate-body_1_span2{
+      font-size: 15px;
+    }
+    .tiket-validate-body_2{
+      width: 80px;
+      height: 1px;
+      background-color: #25a0e4;
+    }
+    .tiket-validate-body_3{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tiket-validate-body_3_span1{
+      font-size: 19px;
+      color: $couleurh1;
+    }
+    .tiket-validate-body_3_span2{
+      font-size: 15px;
+      color: $couleurh1;
+    }
+    .tiket-validate-body_3_span3{
+      font-size: 18px;
+      color: $couleurbtn;
+    }
+    .tiket-validate-price{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tiket-validate-price_prix{
+      font-size: 23px;
+      color: black;
+    }
+    .tiket-validate-price_choice{
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      span{
+        font-size: 11px;
+        color : $couleurh1;
+      }
+      .form-check input{
+        height: 27px;
+        width: 66px;
+      }
+    }
+    .container-detail-voyage{
+      h3{
+        padding-top: 10px;
+        font-size: 20px;
+      }
+    }
+    .container-detail-voyage_submit{
+      background-color: #fff;
+      height: 71px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button{
+        border-radius: $radius1;
+        width: 350px;
+        height: 51px;
+        background-color: #0291f9;
+        color: #fff;
+        font-size: 22px;
+        box-shadow: $myshadow3;
+      }
+      .container-detail-voyage_submit_back, .container-detail-voyage_submit_next{
+        width: 158px;
+        height: 51px;
+      }
+    }
+    .container-detail-voyage_submit_bn{
+      background-color: #f5f5f5;
+      justify-content: space-around;
+    }
+  }
+  #container-pay-commande{
+    h3{
+      width: 100%;
+    }
+    .tiket-validate_div-id{
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: $couleurh1;
+      /* div{
+        
+      } */
+    }
+    #imgUpload{
+      display: none;
+    }
+    //style pour la prévisualisation de la pièce d'identité
+    .btn-file {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    
+      &__actions {
+        margin: 0;
+        padding: 0;
+    
+        &__item {
+          $el-color: #d3e0e9;
+          $el-border: 3px dashed $el-color;
+          $el-border-radius: 35px;
+    
+          padding: $el-border-radius;
+    
+          font-size: 1.5em;
+          color: $el-color;
+          cursor: pointer;
+          text-decoration: none;
+    
+          border-top: $el-border;
+          border-left: $el-border;
+          border-bottom: $el-border;
+    
+          &:first-child {
+            border-top-left-radius: $el-border-radius;
+            border-bottom-left-radius: $el-border-radius;
+          }
+    
+          &:last-child {
+            border-top-right-radius: $el-border-radius;
+            border-bottom-right-radius: $el-border-radius;
+            border-right: $el-border;
+          }
+    
+          &:hover, &:focus {
+            color: #636b6f;
+            background-color: rgba(211, 224, 233, .1);
+    
+            &--shadow {
+              box-shadow: rgb(211, 224, 233) 0 0 60px 15px;
+            }
+          }
+    
+          &--shadow {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+    
+            &::before {
+              content: " ";
+              box-shadow: #fff 0 0 60px 40px;
+              display: inline-block;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 100%;
+              z-index: -1;
+            }
+          }
+        }
+      }
+      &__preview {
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+        border-radius: 35px;
+        background-size: cover;
+        background-position: center;
+      }
+    
+      &.active {
+    
+      }
+    }
+    
+    .form-group {
+      label {
+        &.attachment {
+          width: 100%;
+          .btn-create {
+            & > a, & > div {
+              margin-top: 5px;
+            }
+          }
+          input[type='file'] {
+            display: none;
+          }
+        }
+      }
+    }
+    
+    .sizeIMg{
+      display: none;
+      color: $gray-500;
+    }
+    //Fin style pour la prévisualisation de la pièce d'identité
+    .tiket-validate{
+      height: auto;
+    }
+    .tiket-validate-total-body{
+      display: flex;
+      flex-direction: row;
+      img{
+        width: 89px;
+        height: 46px;
+        border-radius: 8px;
+      }
+    }
+  }
+  #container-ticket-billet{
+    display: none;
+    background-color: #035b8e;
+    overflow-y: auto;
+    .ticket_print{
+      position: absolute;
+      height: 531px;
+      width: 343px;
+      background-color: #fff !important;
+      margin-bottom: 98px;
+      padding : 0;
+      top: 64px;
+    }
+    .ticket_print_head{
+      position: relative;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: #f5f5f5 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        height: 72px;
+        margin: 10px;
+      }
+    }
+    .ticket_print_head_deco1,.ticket_print_head_deco2,.ticket_print_head_deco3,.ticket_print_head_deco4{
+      position: absolute;
+      background-color: #035b8e;
+      border-radius: 50%;
+    }
+    .ticket_print_head_deco1{
+      top: 83px;
+      left: -8px;
+      height: 17px;
+      width: 17px;
+    }
+    .ticket_print_head_deco2{
+      top: 83px;
+      right: -8px;
+      height: 18px;
+      width: 18px;
+    }
+    .ticket_print_head_deco3{
+      bottom: 114px;
+      left: -18px;
+      height: 34px;
+      width: 34px;
+      
+    }
+    .ticket_print_head_deco4{
+      bottom: 114px;
+      right: -18px;
+      height: 35px;
+      width: 35px
+           
+    }
+    .ticket_print_body{
+      height: 232px;
+      border-bottom: 1px dashed #444;
+    }
+    .ticket_print_body-body_dest{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding-top: 20px;
+      svg{
+        width: 32px;
+        height: 32px;
+        color: #cccccc;
+      }
+      span{
+        font-size: 20px;
+        color: $couleurh1;
+      }
+      h1{
+        font-size: 20px;
+        padding: 5px;
+      }
+    }
+    .ticket_print_body-body_dest2{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 33px;
+      padding-right: 33px;
+      color: $couleurh1;
+      padding-top: 5px;
+      .tHead{
+        font-size: 15px;
+      }
+      .tHeadf{
+        font-size: 20px;
+      }
+    }
+    .ticket_print_footer-head{
+      margin-top: 10px;
+      text-align: center;
+      color: $couleurh1;
+    }
+    .ticket_print_footer{
+      display:flex;
+      flex-direction: column;
+
+      #qrcode{
+        position: relative;
+        align-self: center;
+        canvas{
+          width: 100px;
+          height: 100px;
+
+        }
+      }
+
+    }
+    .seppp{
+      padding-top: 5px;
+      height: 20px;
+      font-size: 25px;
+      text-align: center;
+      padding-bottom: 5px;
+      color: $couleurbtn;
+    }
+  }
+  .container-ticket-billet{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    justify-content: center;
+    h1{
+      color: #fff;
+      font-size: 25px;
+      text-align: left;
+      width: 343px;
+    }
+  }
+  #container-voyage-footer{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+    height: 67px;
+    background-color: #fff;
+    box-shadow:  $myshadow2;
+    z-index: 1000;
+    .col-12{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .col-12 svg{
+      color: #959292;
+      height: 45px;
+    }
+
+  }
+}
+/* style à reorganiser */
+.slide1{
+  position: absolute;
+  left: 0;
+  width : 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.div_btn{
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  button{
+    font-size: 16px;
+    background-color : $couleurbtn;
+    height: 54px;
+    width: 242px;
+    color: #fff !important;
+    border-radius: $radius1;
+    box-shadow: $myshadow;
+  }
+}
+.div-link-cnx{
+  position: fixed;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  a{
+    text-decoration: none;
+    color: #035b8e;
+    font-size : 16px;
+
+  }
+  
+
+}
+img{
+  max-width: 701px;
+  max-height: 540px;
+}
+.carousel-indicators{
+  position: fixed !important;
+  bottom: 180px;
+}
+#carouselE{
+  max-width: 701px;
+  max-height: 668px;
+}
+.carousel-indicators [data-bs-target]{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: #888;
+}
+.carousel-dark .carousel-indicators .active {
+  background-color: #e60470;
+}
+
